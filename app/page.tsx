@@ -1,63 +1,57 @@
 import Link from "next/link";
 import { AFFILIATE } from "../lib/affiliates";
 
-const LAST_UPDATED = "oktober 2026";
-
 const vpns = [
   {
     rank: 1,
     name: "NordVPN",
     score: "9.2",
     tag: "Beste overall",
-    blurb: "Snel, stabiel en sterk op streaming — de veiligste allround-keuze voor NL.",
-    plus: "Snel · streaming · Threat Protection",
+    blurb: "Snel, sterk op streaming en betrouwbaar voor dagelijks gebruik in NL.",
+    plus: "Snelheid · streaming · Threat Protection",
     min: "Duurder bij veel devices",
     href: "/reviews/nordvpn",
     deal: AFFILIATE.nord,
-    cta: "Naar NordVPN",
+    cta: "Kies NordVPN",
   },
   {
     rank: 2,
     name: "Surfshark",
     score: "8.9",
     tag: "Beste prijs",
-    blurb: "Onbeperkt apparaten en scherpe jaardeals — ideaal voor gezin of meerdere devices.",
+    blurb: "Onbeperkt apparaten en scherpe jaardeals — sterk voor gezin of meerdere devices.",
     plus: "Unlimited devices · scherpe prijs",
     min: "Iets minder premium merkgevoel",
     href: "/reviews/surfshark",
     deal: AFFILIATE.surfshark,
-    cta: "Naar Surfshark",
+    cta: "Kies Surfshark",
   },
   {
     rank: 3,
     name: "Proton VPN",
     score: "8.5",
     tag: "Beste privacy",
-    blurb: "Zwitserse privacy en open source apps — dezelfde maker als Proton Mail.",
+    blurb: "Zwitserse privacy en open source — dezelfde maker als Proton Mail.",
     plus: "Privacy · open source",
     min: "Streaming wisselt",
     href: "/reviews/proton-vpn",
     deal: AFFILIATE.proton,
-    cta: "Naar Proton VPN",
+    cta: "Kies Proton VPN",
   },
 ] as const;
 
 const faqItems = [
   {
     q: "Welke VPN past bij mij?",
-    a: "Allround/streaming: NordVPN. Budget of veel devices: Surfshark. Maximale privacy: Proton VPN.",
+    a: "Allround en streaming: NordVPN. Budget of veel devices: Surfshark. Privacy eerst: Proton VPN.",
+  },
+  {
+    q: "Wat is de beste VPN voor Netflix?",
+    a: "Voor betrouwbaarheid: NordVPN. Voor prijs: Surfshark. Meer details in onze Netflix-gids.",
   },
   {
     q: "Is een VPN legaal in Nederland?",
     a: "Ja. Illegaal gebruik blijft illegaal — de VPN zelf niet.",
-  },
-  {
-    q: "Wat is de beste VPN voor Netflix?",
-    a: "Voor betrouwbaarheid kiezen we NordVPN. Surfshark scoort goed op prijs. Zie ook onze Netflix-gids.",
-  },
-  {
-    q: "Verdient VPNScore aan deze links?",
-    a: "Ja, via affiliate-links. Jij betaalt niets extra.",
   },
 ] as const;
 
@@ -89,7 +83,7 @@ export default function HomePage() {
     "@type": "WebSite",
     name: "VPNScore",
     url: "https://vpnscore.nl",
-    description: "VPN-vergelijking voor Nederland: scores, reviews en duidelijke keuzes.",
+    description: "Vergelijk de beste VPN's voor Nederland en kies direct.",
     inLanguage: "nl-NL",
   };
 
@@ -111,8 +105,7 @@ export default function HomePage() {
       <section className="hero">
         <h1>Beste VPN Nederland 2026</h1>
         <p className="muted hero-lead">
-          Vergelijk NordVPN, Surfshark en Proton VPN op snelheid, streaming, privacy en prijs.
-          Kies in één oogopslag — updates {LAST_UPDATED}.
+          NordVPN, Surfshark of Proton VPN — scores naast elkaar, daarna kiezen.
         </p>
         <div className="actions">
           <a className="btn" href="#vergelijking">
@@ -154,7 +147,7 @@ export default function HomePage() {
               <td data-label="Privacy">Sterk</td>
               <td>
                 <a className="btn btn-sm" href={AFFILIATE.nord}>
-                  Naar NordVPN
+                  Kies NordVPN
                 </a>
               </td>
             </tr>
@@ -162,7 +155,9 @@ export default function HomePage() {
               <td>
                 <strong>2. Surfshark</strong>
               </td>
-              <td data-label="Score">8.9</td>
+              <td data-label="Score">
+                8.9
+              </td>
               <td data-label="Beste voor">Prijs / gezin</td>
               <td className="best" data-label="Apparaten">
                 Unlimited
@@ -171,7 +166,7 @@ export default function HomePage() {
               <td data-label="Privacy">Goed</td>
               <td>
                 <a className="btn btn-sm" href={AFFILIATE.surfshark}>
-                  Naar Surfshark
+                  Kies Surfshark
                 </a>
               </td>
             </tr>
@@ -179,7 +174,9 @@ export default function HomePage() {
               <td>
                 <strong>3. Proton VPN</strong>
               </td>
-              <td data-label="Score">8.5</td>
+              <td data-label="Score">
+                8.5
+              </td>
               <td data-label="Beste voor">Privacy</td>
               <td data-label="Apparaten">Tot 10</td>
               <td data-label="Streaming">Wisselend</td>
@@ -188,7 +185,7 @@ export default function HomePage() {
               </td>
               <td>
                 <a className="btn btn-sm" href={AFFILIATE.proton}>
-                  Naar Proton
+                  Kies Proton
                 </a>
               </td>
             </tr>
