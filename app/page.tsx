@@ -7,36 +7,54 @@ const vpns = [
     name: "NordVPN",
     score: "9.2",
     tag: "Beste overall",
+    price: "€3,39",
+    priceNote: "/mnd · 2 jaar",
+    devices: "Tot 10",
+    streaming: "Uitstekend",
+    privacy: "Sterk",
     blurb: "Snel, sterk op streaming en betrouwbaar voor dagelijks gebruik in NL.",
     plus: "Snelheid · streaming · Threat Protection",
     min: "Duurder bij veel devices",
     href: "/reviews/nordvpn",
     deal: AFFILIATE.nord,
-    cta: "Kies NordVPN",
+    cta: "Bekijk aanbieding",
+    winner: true,
   },
   {
     rank: 2,
     name: "Surfshark",
     score: "8.9",
     tag: "Beste prijs",
+    price: "€1,99",
+    priceNote: "/mnd · 2 jaar",
+    devices: "Unlimited",
+    streaming: "Zeer goed",
+    privacy: "Goed",
     blurb: "Onbeperkt apparaten en scherpe jaardeals — sterk voor gezin of meerdere devices.",
     plus: "Unlimited devices · scherpe prijs",
     min: "Iets minder premium merkgevoel",
     href: "/reviews/surfshark",
     deal: AFFILIATE.surfshark,
-    cta: "Kies Surfshark",
+    cta: "Bekijk aanbieding",
+    winner: false,
   },
   {
     rank: 3,
     name: "Proton VPN",
     score: "8.5",
     tag: "Beste privacy",
+    price: "€2,99",
+    priceNote: "/mnd · 2 jaar",
+    devices: "Tot 10",
+    streaming: "Wisselend",
+    privacy: "Top",
     blurb: "Zwitserse privacy en open source — dezelfde maker als Proton Mail.",
     plus: "Privacy · open source",
     min: "Streaming wisselt",
     href: "/reviews/proton-vpn",
     deal: AFFILIATE.proton,
-    cta: "Kies Proton VPN",
+    cta: "Bekijk aanbieding",
+    winner: false,
   },
 ] as const;
 
@@ -87,6 +105,8 @@ export default function HomePage() {
     inLanguage: "nl-NL",
   };
 
+  const winner = vpns[0];
+
   return (
     <>
       <script
@@ -104,16 +124,24 @@ export default function HomePage() {
 
       <section className="hero">
         <h1>Beste VPN Nederland 2026</h1>
+        <p className="winner-line">
+          <strong>Winnaar: {winner.name}</strong>
+          <span className="muted">
+            {" "}
+            — {winner.tag.toLowerCase()} · vanaf {winner.price}
+            {winner.priceNote}
+          </span>
+        </p>
         <p className="muted hero-lead">
-          NordVPN, Surfshark of Proton VPN — scores naast elkaar, daarna kiezen.
+          NordVPN, Surfshark of Proton VPN — scores en prijzen naast elkaar, daarna kiezen.
         </p>
         <div className="actions">
           <a className="btn" href="#vergelijking">
             Bekijk de ranking
           </a>
-          <Link className="btn-ghost" href="/vpn-netflix">
-            VPN voor Netflix
-          </Link>
+          <a className="btn-ghost" href={winner.deal}>
+            Bekijk {winner.name}-aanbieding
+          </a>
         </div>
       </section>
 
@@ -124,86 +152,70 @@ export default function HomePage() {
             <tr>
               <th>VPN</th>
               <th>Score</th>
+              <th>Prijs</th>
               <th>Beste voor</th>
               <th>Apparaten</th>
               <th>Streaming</th>
-              <th>Privacy</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <strong>1. NordVPN</strong>
-              </td>
-              <td className="best" data-label="Score">
-                9.2
-              </td>
-              <td data-label="Beste voor">Overall</td>
-              <td data-label="Apparaten">Tot 10</td>
-              <td className="best" data-label="Streaming">
-                Uitstekend
-              </td>
-              <td data-label="Privacy">Sterk</td>
-              <td>
-                <a className="btn btn-sm" href={AFFILIATE.nord}>
-                  Kies NordVPN
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>2. Surfshark</strong>
-              </td>
-              <td data-label="Score">
-                8.9
-              </td>
-              <td data-label="Beste voor">Prijs / gezin</td>
-              <td className="best" data-label="Apparaten">
-                Unlimited
-              </td>
-              <td data-label="Streaming">Zeer goed</td>
-              <td data-label="Privacy">Goed</td>
-              <td>
-                <a className="btn btn-sm" href={AFFILIATE.surfshark}>
-                  Kies Surfshark
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>3. Proton VPN</strong>
-              </td>
-              <td data-label="Score">
-                8.5
-              </td>
-              <td data-label="Beste voor">Privacy</td>
-              <td data-label="Apparaten">Tot 10</td>
-              <td data-label="Streaming">Wisselend</td>
-              <td className="best" data-label="Privacy">
-                Top
-              </td>
-              <td>
-                <a className="btn btn-sm" href={AFFILIATE.proton}>
-                  Kies Proton
-                </a>
-              </td>
-            </tr>
+            {vpns.map((v) => (
+              <tr key={v.name} className={v.winner ? "winner" : undefined}>
+                <td>
+                  <strong>
+                    {v.rank}. {v.name}
+                  </strong>
+                  {v.winner ? <span className="winner-pill">Winnaar</span> : null}
+                </td>
+                <td className={v.rank === 1 ? "best" : undefined} data-label="Score">
+                  {v.score}
+                </td>
+                <td className="price" data-label="Prijs">
+                  <span className="price-main">{v.price}</span>
+                  <span className="price-note">{v.priceNote}</span>
+                </td>
+                <td data-label="Beste voor">{v.tag.replace("Beste ", "")}</td>
+                <td
+                  className={v.name === "Surfshark" ? "best" : undefined}
+                  data-label="Apparaten"
+                >
+                  {v.devices}
+                </td>
+                <td
+                  className={v.name === "NordVPN" ? "best" : undefined}
+                  data-label="Streaming"
+                >
+                  {v.streaming}
+                </td>
+                <td>
+                  <a className="btn btn-sm" href={v.deal}>
+                    Bekijk aanbieding
+                  </a>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
+      <p className="small muted table-note">
+        Prijzen: langetermijndeals (2 jaar), kunnen wijzigen. Check altijd de actuele aanbieding.
+      </p>
 
       <h2 id="top3">Top 3</h2>
       {vpns.map((v) => (
-        <article key={v.name} className="card">
+        <article key={v.name} className={v.winner ? "card card-winner" : "card"}>
           <div className="card-head">
             <div>
               <h3>
                 <span className="rank">{v.rank}</span>
-                {v.name}{" "}
-                <span className="tag">{v.tag}</span>
+                {v.name} <span className="tag">{v.tag}</span>
               </h3>
               <p style={{ margin: "0.35rem 0 0" }}>{v.blurb}</p>
+              <p className="price-inline">
+                Vanaf <strong>{v.price}</strong>
+                {v.priceNote}
+              </p>
             </div>
             <span className="score">{v.score}/10</span>
           </div>
