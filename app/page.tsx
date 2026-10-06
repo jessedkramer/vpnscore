@@ -163,29 +163,29 @@ export default function HomePage() {
           <tbody>
             <tr>
               <td><strong>NordVPN</strong></td>
-              <td className="best">9.2</td>
-              <td>Overall / snelheid</td>
-              <td>Tot 10</td>
-              <td className="best">Uitstekend</td>
-              <td>Sterk (audits)</td>
+              <td className="best" data-label="Score">9.2</td>
+              <td data-label="Beste voor">Overall / snelheid</td>
+              <td data-label="Apparaten">Tot 10</td>
+              <td className="best" data-label="Streaming">Uitstekend</td>
+              <td data-label="Privacy">Sterk (audits)</td>
               <td><a className="btn" href={AFFILIATE.nord} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>Deal</a></td>
             </tr>
             <tr>
               <td><strong>Surfshark</strong></td>
-              <td>8.9</td>
-              <td>Prijs / gezin</td>
-              <td className="best">Unlimited</td>
-              <td>Zeer goed</td>
-              <td>Goed</td>
+              <td data-label="Score">8.9</td>
+              <td data-label="Beste voor">Prijs / gezin</td>
+              <td className="best" data-label="Apparaten">Unlimited</td>
+              <td data-label="Streaming">Zeer goed</td>
+              <td data-label="Privacy">Goed</td>
               <td><a className="btn" href={AFFILIATE.surfshark} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>Deal</a></td>
             </tr>
             <tr>
               <td><strong>Proton VPN</strong></td>
-              <td>8.5</td>
-              <td>Privacy</td>
-              <td>Tot 10 (Plus)</td>
-              <td>Wisselend</td>
-              <td className="best">Top (CH / OSS)</td>
+              <td data-label="Score">8.5</td>
+              <td data-label="Beste voor">Privacy</td>
+              <td data-label="Apparaten">Tot 10 (Plus)</td>
+              <td data-label="Streaming">Wisselend</td>
+              <td className="best" data-label="Privacy">Top (CH / OSS)</td>
               <td><a className="btn" href={AFFILIATE.proton} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>Deal</a></td>
             </tr>
           </tbody>
