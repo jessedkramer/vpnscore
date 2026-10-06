@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     template: "%s | VPNScore",
   },
   description:
-    "Onafhankelijke VPN-vergelijking voor Nederland. Scores, reviews, streaming & privacy — kort en eerlijk.",
+    "Vergelijk de beste VPN's voor Nederland. Ranking, scores en directe links naar NordVPN, Surfshark en Proton VPN.",
   metadataBase: new URL("https://vpnscore.nl"),
   openGraph: {
     title: "VPNScore — Beste VPN Nederland 2026",
-    description: "Vergelijk NordVPN, Surfshark en Proton VPN met scores en koopadvies.",
+    description: "Vergelijk NordVPN, Surfshark en Proton VPN — scores naast elkaar, daarna kiezen.",
     locale: "nl_NL",
     type: "website",
   },
