@@ -129,9 +129,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="badge-row">
           <span className="badge accent">Bijgewerkt {LAST_UPDATED}</span>
-          <span className="badge">NL-focus</span>
-          <span className="badge">Vaste criteria</span>
-          <span className="badge">Affiliate vermeld</span>
+          <span className="badge">NL-focus · vaste criteria</span>
         </div>
         <h1>VPN vergelijken Nederland 2026</h1>
         <p className="muted" style={{ fontSize: "1.05rem", maxWidth: "42rem" }}>
@@ -155,6 +153,31 @@ export default function HomePage() {
         <div className="trust-item"><strong>Eerlijk over geld</strong><span>Affiliate ≠ ranking</span></div>
         <div className="trust-item"><strong>Minpunten zichtbaar</strong><span>Geen perfecte scores</span></div>
       </div>
+
+      <h2 id="methode">Hoe we testen</h2>
+      <div className="card">
+        <p style={{ marginTop: 0 }}>
+          Elke VPN krijgt dezelfde zes criteria: snelheid, privacy, streaming, apparaten, prijs en gebruiksgemak.
+          We toetsen vooral NL-relevant gebruik (glasvezel, Netflix/Disney+, openbare wifi, telefoon + laptop).
+        </p>
+        <p>
+          <strong>Wat we niet claimen:</strong> een laboratorium met tientallen serverlocaties of “de enige juiste”
+          ranking. Wel: vaste lat, zichtbare minpunten, en updates als er iets wezenlijks wijzigt.
+        </p>
+        <p className="small muted" style={{ marginBottom: 0 }}>
+          Bronnen per claim staan in de reviews (o.a. audits/no-logs waar relevant). Laatst bijgewerkt: {LAST_UPDATED}.
+        </p>
+      </div>
+
+      <h2>Criteria</h2>
+      <ol>
+        <li><strong>Snelheid</strong> — bruikbaar voor 4K en videobellen</li>
+        <li><strong>Privacy</strong> — no-logs, jurisdictie, audits</li>
+        <li><strong>Streaming</strong> — Netflix NL/US, Disney+, enz.</li>
+        <li><strong>Apparaten</strong> — hoeveel tegelijk</li>
+        <li><strong>Prijs</strong> — echte maandprijs na introductie</li>
+        <li><strong>Gebruiksgemak</strong> — apps en installatie</li>
+      </ol>
 
       <h2 id="vergelijking">Vergelijking</h2>
       <div className="table-wrap">
@@ -233,39 +256,14 @@ export default function HomePage() {
             <div className="cons"><strong>Min</strong>{v.min}</div>
           </div>
           <div className="actions">
-            <Link className="btn-ghost" href={v.href}>Lees review</Link>
-            <a className="btn" href={v.deal}>{v.cta}</a>
+            <Link className="btn" href={v.href}>Lees review</Link>
+            <a className="btn-ghost" href={v.deal}>{v.cta}</a>
           </div>
           <p className="small muted" style={{ marginBottom: 0 }}>
             Externe link kan affiliate zijn.
           </p>
         </article>
       ))}
-
-      <h2 id="methode">Hoe we testen</h2>
-      <div className="card">
-        <p style={{ marginTop: 0 }}>
-          Elke VPN krijgt dezelfde zes criteria: snelheid, privacy, streaming, apparaten, prijs en gebruiksgemak.
-          We toetsen vooral NL-relevant gebruik (glasvezel, Netflix/Disney+, openbare wifi, telefoon + laptop).
-        </p>
-        <p>
-          <strong>Wat we niet claimen:</strong> een laboratorium met tientallen serverlocaties of “de enige juiste”
-          ranking. Wel: vaste lat, zichtbare minpunten, en updates als er iets wezenlijks wijzigt.
-        </p>
-        <p className="small muted" style={{ marginBottom: 0 }}>
-          Bronnen per claim staan in de reviews (o.a. audits/no-logs waar relevant). Laatst bijgewerkt: {LAST_UPDATED}.
-        </p>
-      </div>
-
-      <h2>Criteria</h2>
-      <ol>
-        <li><strong>Snelheid</strong> — bruikbaar voor 4K en videobellen</li>
-        <li><strong>Privacy</strong> — no-logs, jurisdictie, audits</li>
-        <li><strong>Streaming</strong> — Netflix NL/US, Disney+, enz.</li>
-        <li><strong>Apparaten</strong> — hoeveel tegelijk</li>
-        <li><strong>Prijs</strong> — echte maandprijs na introductie</li>
-        <li><strong>Gebruiksgemak</strong> — apps en installatie</li>
-      </ol>
 
       <h2>Welke past bij jou?</h2>
       <ul>
