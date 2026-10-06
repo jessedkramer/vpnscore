@@ -1,12 +1,10 @@
 import Link from "next/link";
 
 const links = [
-  { href: "/", label: "Vergelijking" },
-  { href: "/#methode", label: "Methode" },
+  { href: "/#vergelijking", label: "Vergelijking" },
   { href: "/reviews/nordvpn", label: "NordVPN" },
   { href: "/reviews/surfshark", label: "Surfshark" },
   { href: "/vpn-netflix", label: "Netflix" },
-  { href: "/vpn-privacy", label: "Privacy" },
 ];
 
 export function SiteHeader() {

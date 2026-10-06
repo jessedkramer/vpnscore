@@ -7,12 +7,10 @@ export function SiteFooter() {
         <div>
           <strong>VPNScore</strong>
           <p className="muted small">
-            Onafhankelijke VPN-vergelijking voor Nederland. We verdienen mogelijk
-            affiliate-commissie — dat beïnvloedt onze scores niet.
+            VPN-vergelijking voor Nederland. Laatst bijgewerkt: oktober 2026.
           </p>
         </div>
         <div className="footer-links">
-          <Link href="/#methode">Hoe we testen</Link>
           <Link href="/reviews/nordvpn">NordVPN review</Link>
           <Link href="/reviews/surfshark">Surfshark review</Link>
           <Link href="/vpn-netflix">VPN voor Netflix</Link>
@@ -20,9 +18,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="wrap disclosure">
-        Laatst bijgewerkt: oktober 2026 · Scores kunnen wijzigen na nieuwe tests.
-        {" "}Affiliate-links mogelijk; zie{" "}
-        <Link href="/#methode">onze methode</Link>.
+        Sommige links zijn affiliate — jij betaalt niets extra.
       </div>
     </footer>
   );
