@@ -1,19 +1,16 @@
 import Link from "next/link";
+import { AFFILIATE } from "../../../lib/affiliates";
 
 export default function Page() {
   return (
-    <main className="wrap">
-      <nav className="nav">
-        <Link href="/">← Home</Link>
-        <Link href="/reviews/nordvpn">NordVPN</Link>
-      </nav>
-      <p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
+    <>
+<p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
         Affiliate disclosure: we kunnen commissie ontvangen via links op deze pagina.
       </p>
       <h1>Surfshark Review 2026 — Beste VPN voor de prijs?</h1>
       <p><span className="score">8.9/10</span> — beste prijs/kwaliteit, vooral bij veel apparaten.</p>
       <p>Surfshark is de challenger die groeit op scherpe deals en <strong>onbeperkt apparaten</strong>. Ideaal voor gezin of student + laptop + telefoon + TV.</p>
-      <a className="btn" href="#AFFILIATE_SURFSHARK">Naar Surfshark-aanbieding →</a>
+      <a className="btn" href={AFFILIATE.surfshark}>Naar Surfshark-aanbieding →</a>
 
       <h2>Kort oordeel</h2>
       <div className="card">
@@ -44,7 +41,7 @@ export default function Page() {
 
       <h2>Prijs</h2>
       <p>Introductiedeals op 12–24 maanden zijn agressief. Maandprijs zonder deal is minder interessant — koop slim in.</p>
-      <a className="btn" href="#AFFILIATE_SURFSHARK">Check Surfshark-deal →</a>
+      <a className="btn" href={AFFILIATE.surfshark}>Check Surfshark-deal →</a>
 
       <h2>Plus &amp; min</h2>
       <p><strong>Plus:</strong> unlimited devices · scherpe langetermijnprijs · ruim feature-pakket</p>
@@ -58,8 +55,8 @@ export default function Page() {
 
       <h2>Conclusie</h2>
       <p>Surfshark wint op prijs en devices. Voor de meeste huishoudens in NL is dit de slimste deal; wil je maximale allround-prestatie, kies Nord.</p>
-      <a className="btn" href="#AFFILIATE_SURFSHARK">Probeer Surfshark →</a>
+      <a className="btn" href={AFFILIATE.surfshark}>Probeer Surfshark →</a>
       <p className="disclosure">Laatst bijgewerkt: oktober 2026 · Placeholder: [AFFILIATE_SURFSHARK]</p>
-    </main>
+    </>
   );
 }

@@ -1,19 +1,16 @@
 import Link from "next/link";
+import { AFFILIATE } from "../../../lib/affiliates";
 
 export default function Page() {
   return (
-    <main className="wrap">
-      <nav className="nav">
-        <Link href="/">← Home</Link>
-        <Link href="/reviews/surfshark">Surfshark</Link>
-      </nav>
-      <p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
+    <>
+<p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
         Affiliate disclosure: we kunnen commissie ontvangen via links op deze pagina.
       </p>
       <h1>NordVPN Review 2026 — Is het de beste VPN?</h1>
       <p><span className="score">9.2/10</span> — onze topkeuze voor de meeste Nederlanders.</p>
       <p>NordVPN is een van de grootste VPN-merken ter wereld. In deze review: snelheid, privacy, streaming, prijs en of hij het waard is.</p>
-      <a className="btn" href="#AFFILIATE_NORD">Naar NordVPN-aanbieding →</a>
+      <a className="btn" href={AFFILIATE.nord}>Naar NordVPN-aanbieding →</a>
 
       <h2>Kort oordeel</h2>
       <div className="card">
@@ -44,7 +41,7 @@ export default function Page() {
 
       <h2>Prijs</h2>
       <p>Maandabonnement is duur; 1- of 2-jaardeals zijn de normale manier om te kopen. Let op auto-renewal.</p>
-      <a className="btn" href="#AFFILIATE_NORD">Check actuele NordVPN-prijs →</a>
+      <a className="btn" href={AFFILIATE.nord}>Check actuele NordVPN-prijs →</a>
 
       <h2>Plus &amp; min</h2>
       <p><strong>Plus:</strong> snel en stabiel · goede streaming · extra security-features</p>
@@ -58,8 +55,8 @@ export default function Page() {
 
       <h2>Conclusie</h2>
       <p>NordVPN is terecht onze #1 voor 2026: snel, betrouwbaar, weinig gedoe. Betaal je liever minder voor het hele huishouden? Neem Surfshark.</p>
-      <a className="btn" href="#AFFILIATE_NORD">Probeer NordVPN →</a>
+      <a className="btn" href={AFFILIATE.nord}>Probeer NordVPN →</a>
       <p className="disclosure">Laatst bijgewerkt: oktober 2026 · Placeholder: [AFFILIATE_NORD]</p>
-    </main>
+    </>
   );
 }
