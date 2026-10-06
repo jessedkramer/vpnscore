@@ -1,37 +1,39 @@
 import Link from "next/link";
 import { AFFILIATE } from "../lib/affiliates";
 
+const LAST_UPDATED = "6 oktober 2026";
+
 const vpns = [
   {
     rank: 1,
     name: "NordVPN",
     score: "9.2",
-    tag: "Beste overall",
-    blurb: "Snelheid, streaming en Threat Protection — de veiligste allrounder voor NL.",
-    plus: "Snel · stabiel · sterke streaming",
+    tag: "Overall",
+    blurb: "Sterk op snelheid en streaming, plus Threat Protection. Solide allrounder voor NL-gebruik.",
+    plus: "Snel · stabiel · goede streaming",
     min: "Duurder bij veel devices",
     href: "/reviews/nordvpn",
     deal: AFFILIATE.nord,
-    cta: "Bekijk NordVPN-deal →",
+    cta: "Bekijk NordVPN →",
   },
   {
     rank: 2,
     name: "Surfshark",
     score: "8.9",
-    tag: "Beste prijs",
-    blurb: "Onbeperkt apparaten en scherpe langetermijnprijs — ideaal voor gezin.",
+    tag: "Prijs / devices",
+    blurb: "Onbeperkt apparaten en vaak scherpe langetermijnprijs. Handig voor gezin of meerdere devices.",
     plus: "Unlimited devices · Camouflage Mode",
     min: "Iets minder premium merkgevoel",
     href: "/reviews/surfshark",
     deal: AFFILIATE.surfshark,
-    cta: "Bekijk Surfshark-deal →",
+    cta: "Bekijk Surfshark →",
   },
   {
     rank: 3,
     name: "Proton VPN",
     score: "8.5",
-    tag: "Beste privacy",
-    blurb: "Zwitserse privacy-focus, open source apps — zelfde maker als Proton Mail.",
+    tag: "Privacy",
+    blurb: "Zwitserse privacy-focus en open source apps — zelfde maker als Proton Mail.",
     plus: "Privacy · transparantie",
     min: "Streaming wisselt · gratis plan beperkt",
     href: "/reviews/proton-vpn",
@@ -43,27 +45,31 @@ const vpns = [
 const faqItems = [
   {
     q: "Is een VPN legaal in Nederland?",
-    a: "Ja. Illegaal gebruik (fraude, etc.) blijft illegaal — de VPN zelf niet.",
+    a: "Ja. Illegaal gebruik blijft illegaal — de VPN zelf niet. Wij moedigen geen illegaal gebruik aan.",
   },
   {
     q: "Heb ik een VPN nodig met glasvezel?",
-    a: "Niet voor snelheid. Wel voor privacy op openbare wifi, streaming-regio's, en minder tracking.",
+    a: "Niet voor snelheid. Wel nuttig op openbare wifi, bij streaming over regio’s, en als je minder tracking wilt.",
   },
   {
     q: "Welke VPN is het goedkoopst?",
-    a: "Vaak Surfshark op 2-jaar deal. Vergelijk altijd de prijs ná de actieperiode.",
+    a: "Vaak Surfshark op een 1- of 2-jaarabonnement. Kijk altijd naar de prijs na de introductieperiode.",
   },
   {
     q: "Wat is de beste VPN voor Netflix in NL?",
-    a: "Voor betrouwbaarheid kiezen we NordVPN. Surfshark is sterker op prijs en unlimited devices. Zie ook onze Netflix-gids.",
+    a: "Op betrouwbaarheid zetten we NordVPN hoger. Surfshark is sterker op prijs en unlimited devices. Details: onze Netflix-gids.",
   },
   {
     q: "Verdient VPNScore aan deze reviews?",
-    a: "Ja, via affiliate-links. Jij betaalt niets extra. Scores volgen vaste criteria — geen betaalde #1-plek.",
+    a: "Ja. Als je via onze links een abonnement afsluit, kunnen we commissie ontvangen. Jij betaalt niets extra. De ranking volgt vaste criteria — geen betaalde #1.",
   },
   {
-    q: "Hoe vaak updaten jullie de scores?",
-    a: "Bij grote prijs-/featurewijzigingen of nieuwe tests. Laatste update: oktober 2026.",
+    q: "Hoe objectief zijn jullie scores?",
+    a: "Zelfde zes criteria voor elke VPN. We noemen minpunten expliciet. We hebben (nog) geen groot lab; wel herhaalbare NL-gerichte checks. Scores kunnen wijzigen bij nieuwe info.",
+  },
+  {
+    q: "Hoe vaak updaten jullie de pagina?",
+    a: `Bij relevante prijs- of featurewijzigingen. Laatst bijgewerkt: ${LAST_UPDATED}.`,
   },
 ] as const;
 
@@ -116,37 +122,41 @@ export default function HomePage() {
       />
 
       <p className="disclosure" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
-        Affiliate disclosure: VPNScore kan commissie ontvangen als je via onze links een VPN afsluit.
-        Dat kost jou niets extra. We testen en vergelijken onafhankelijk — geen betaalde ranking.
+        Transparantie: via sommige links kunnen we een affiliate-commissie ontvangen. Dat verandert de prijs
+        voor jou niet. Ranking volgt vaste criteria — geen betaalde plekken.
       </p>
 
       <section className="hero">
         <div className="badge-row">
-          <span className="badge accent">Update okt 2026</span>
+          <span className="badge accent">Bijgewerkt {LAST_UPDATED}</span>
           <span className="badge">NL-focus</span>
-          <span className="badge">Onafhankelijke scores</span>
-          <span className="badge">Vaste testcriteria</span>
+          <span className="badge">Vaste criteria</span>
+          <span className="badge">Affiliate vermeld</span>
         </div>
-        <h1>Beste VPN Nederland 2026 — getest & vergeleken</h1>
+        <h1>VPN vergelijken Nederland 2026</h1>
         <p className="muted" style={{ fontSize: "1.05rem", maxWidth: "42rem" }}>
-          Snelheid, privacy, Netflix/streaming en eerlijke prijs — zonder marketingpraat.
-          Side-by-side tabel + reviews zodat je in 30 seconden kiest.
+          Overzicht van NordVPN, Surfshark en Proton VPN op snelheid, privacy, streaming en prijs.
+          Geen hype — wel scores, minpunten en hoe we tot die scores komen.
+        </p>
+        <p className="small muted" style={{ margin: 0 }}>
+          Laatst bijgewerkt: <strong>{LAST_UPDATED}</strong>
         </p>
         <div className="actions">
-          <a className="btn" href="#top3">Bekijk top 3 →</a>
-          <Link className="btn-ghost" href="/vpn-netflix">VPN voor Netflix</Link>
-          <Link className="btn-ghost" href="/vpn-privacy">Privacy-gids</Link>
+          <a className="btn" href="#vergelijking">Naar vergelijking</a>
+          <a className="btn-ghost" href="#methode">Hoe we testen</a>
+          <Link className="btn-ghost" href="/vpn-netflix">Netflix</Link>
+          <Link className="btn-ghost" href="/vpn-privacy">Privacy</Link>
         </div>
       </section>
 
       <div className="trust-bar" aria-label="Waarom VPNScore">
-        <div className="trust-item"><strong>Scores 1–10</strong><span>Zelfde criteria per VPN</span></div>
-        <div className="trust-item"><strong>NL-gebruik</strong><span>Streaming & glasvezel</span></div>
-        <div className="trust-item"><strong>Transparant</strong><span>Affiliate ≠ ranking</span></div>
-        <div className="trust-item"><strong>Mobiel-first</strong><span>Snel & leesbaar</span></div>
+        <div className="trust-item"><strong>Zelfde lat</strong><span>6 criteria per VPN</span></div>
+        <div className="trust-item"><strong>NL-context</strong><span>Streaming & glasvezel</span></div>
+        <div className="trust-item"><strong>Eerlijk over geld</strong><span>Affiliate ≠ ranking</span></div>
+        <div className="trust-item"><strong>Minpunten zichtbaar</strong><span>Geen perfecte scores</span></div>
       </div>
 
-      <h2>Vergelijkingstabel</h2>
+      <h2 id="vergelijking">Vergelijking</h2>
       <div className="table-wrap">
         <table className="compare">
           <thead>
@@ -168,7 +178,11 @@ export default function HomePage() {
               <td data-label="Apparaten">Tot 10</td>
               <td className="best" data-label="Streaming">Uitstekend</td>
               <td data-label="Privacy">Sterk (audits)</td>
-              <td><a className="btn" href={AFFILIATE.nord} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>Deal</a></td>
+              <td>
+                <a className="btn-ghost" href={AFFILIATE.nord} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>
+                  Bekijk
+                </a>
+              </td>
             </tr>
             <tr>
               <td><strong>Surfshark</strong></td>
@@ -177,7 +191,11 @@ export default function HomePage() {
               <td className="best" data-label="Apparaten">Unlimited</td>
               <td data-label="Streaming">Zeer goed</td>
               <td data-label="Privacy">Goed</td>
-              <td><a className="btn" href={AFFILIATE.surfshark} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>Deal</a></td>
+              <td>
+                <a className="btn-ghost" href={AFFILIATE.surfshark} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>
+                  Bekijk
+                </a>
+              </td>
             </tr>
             <tr>
               <td><strong>Proton VPN</strong></td>
@@ -186,13 +204,17 @@ export default function HomePage() {
               <td data-label="Apparaten">Tot 10 (Plus)</td>
               <td data-label="Streaming">Wisselend</td>
               <td className="best" data-label="Privacy">Top (CH / OSS)</td>
-              <td><a className="btn" href={AFFILIATE.proton} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>Deal</a></td>
+              <td>
+                <a className="btn-ghost" href={AFFILIATE.proton} style={{ padding: "0.4rem 0.7rem", fontSize: "0.8rem" }}>
+                  Bekijk
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="top3">Onze top 3</h2>
+      <h2 id="top3">Top 3 toegelicht</h2>
       {vpns.map((v) => (
         <article key={v.name} className="card">
           <div className="card-head">
@@ -211,42 +233,48 @@ export default function HomePage() {
             <div className="cons"><strong>Min</strong>{v.min}</div>
           </div>
           <div className="actions">
+            <Link className="btn-ghost" href={v.href}>Lees review</Link>
             <a className="btn" href={v.deal}>{v.cta}</a>
-            <Link className="btn-ghost" href={v.href}>Volledige review</Link>
           </div>
+          <p className="small muted" style={{ marginBottom: 0 }}>
+            Externe link kan affiliate zijn.
+          </p>
         </article>
       ))}
 
-      <h2>Hoe we testen</h2>
+      <h2 id="methode">Hoe we testen</h2>
       <div className="card">
         <p style={{ marginTop: 0 }}>
-          Elke VPN scoort op dezelfde zes criteria (snelheid, privacy, streaming, apparaten, prijs, gemak).
-          We kijken naar NL-relevant gebruik: glasvezel, Netflix/Disney+, openbare wifi en apps op telefoon + laptop.
-          Affiliate-inkomsten beïnvloeden de ranking niet — wel vermelden we deals transparant.
+          Elke VPN krijgt dezelfde zes criteria: snelheid, privacy, streaming, apparaten, prijs en gebruiksgemak.
+          We toetsen vooral NL-relevant gebruik (glasvezel, Netflix/Disney+, openbare wifi, telefoon + laptop).
+        </p>
+        <p>
+          <strong>Wat we niet claimen:</strong> een laboratorium met tientallen serverlocaties of “de enige juiste”
+          ranking. Wel: vaste lat, zichtbare minpunten, en updates als er iets wezenlijks wijzigt.
         </p>
         <p className="small muted" style={{ marginBottom: 0 }}>
-          Geen lab met 50 serverlocaties (nog): wel consistente, herhaalbare checks en eerlijke minpunten.
+          Bronnen per claim staan in de reviews (o.a. audits/no-logs waar relevant). Laatst bijgewerkt: {LAST_UPDATED}.
         </p>
       </div>
 
-      <h2>Waar letten we op?</h2>
+      <h2>Criteria</h2>
       <ol>
         <li><strong>Snelheid</strong> — bruikbaar voor 4K en videobellen</li>
         <li><strong>Privacy</strong> — no-logs, jurisdictie, audits</li>
-        <li><strong>Streaming</strong> — Netflix NL/US, Disney+, etc.</li>
+        <li><strong>Streaming</strong> — Netflix NL/US, Disney+, enz.</li>
         <li><strong>Apparaten</strong> — hoeveel tegelijk</li>
         <li><strong>Prijs</strong> — echte maandprijs na introductie</li>
-        <li><strong>Gebruiksgemak</strong> — apps NL/ENG, installatie</li>
+        <li><strong>Gebruiksgemak</strong> — apps en installatie</li>
       </ol>
 
-      <h2>Welke VPN kiezen?</h2>
+      <h2>Welke past bij jou?</h2>
       <ul>
-        <li><strong>Veiligste allrounder?</strong> → <Link href="/reviews/nordvpn">NordVPN</Link></li>
-        <li><strong>Veel apparaten, budget?</strong> → <Link href="/reviews/surfshark">Surfshark</Link></li>
-        <li><strong>Maximale privacy / Proton-ecosysteem?</strong> → <Link href="/reviews/proton-vpn">Proton VPN</Link></li>
+        <li><strong>Allround / streaming:</strong> <Link href="/reviews/nordvpn">NordVPN</Link></li>
+        <li><strong>Budget / veel devices:</strong> <Link href="/reviews/surfshark">Surfshark</Link></li>
+        <li><strong>Privacy / Proton-ecosysteem:</strong> <Link href="/reviews/proton-vpn">Proton VPN</Link></li>
       </ul>
       <p>
-        Ook handig: <Link href="/vpn-netflix">VPN voor Netflix</Link> ·{" "}
+        Verder: <Link href="/vpn-netflix">VPN voor Netflix</Link> ·{" "}
         <Link href="/vpn-privacy">VPN voor privacy</Link>
       </p>
 
