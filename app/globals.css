@@ -270,6 +270,53 @@ strong { color: var(--text); }
 .compare tr:last-child td { border-bottom: none; }
 .compare .best { color: var(--accent-2); font-weight: 700; }
 
+
+.winner-line {
+  margin: 0;
+  font-size: 1rem;
+}
+.winner-pill {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-2);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 45%, var(--border));
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  vertical-align: middle;
+}
+.compare tr.winner td {
+  background: color-mix(in srgb, var(--accent-2) 8%, transparent);
+}
+.compare .price {
+  white-space: nowrap;
+}
+.price-main {
+  display: block;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.price-note {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.price-inline {
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.table-note {
+  margin: 0.55rem 0 0;
+}
+.card-winner {
+  border-color: color-mix(in srgb, var(--accent-2) 45%, var(--border));
+}
+
 .faq details {
   background: var(--card);
   border: 1px solid var(--border);
@@ -364,6 +411,9 @@ strong { color: var(--text); }
     border-radius: 12px;
     padding: 0.85rem 0.95rem;
     box-shadow: var(--shadow);
+  }
+  .compare tr.winner {
+    border-color: color-mix(in srgb, var(--accent-2) 45%, var(--border));
   }
   .compare td {
     display: grid;
