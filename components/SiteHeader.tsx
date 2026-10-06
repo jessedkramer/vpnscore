@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const links = [
   { href: "/", label: "Vergelijking" },
+  { href: "/#methode", label: "Methode" },
   { href: "/reviews/nordvpn", label: "NordVPN" },
   { href: "/reviews/surfshark", label: "Surfshark" },
   { href: "/vpn-netflix", label: "Netflix" },
