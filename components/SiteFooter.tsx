@@ -12,6 +12,7 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="footer-links">
+          <Link href="/#methode">Hoe we testen</Link>
           <Link href="/reviews/nordvpn">NordVPN review</Link>
           <Link href="/reviews/surfshark">Surfshark review</Link>
           <Link href="/vpn-netflix">VPN voor Netflix</Link>
@@ -20,6 +21,8 @@ export function SiteFooter() {
       </div>
       <div className="wrap disclosure">
         Laatst bijgewerkt: oktober 2026 · Scores kunnen wijzigen na nieuwe tests.
+        {" "}Affiliate-links mogelijk; zie{" "}
+        <Link href="/#methode">onze methode</Link>.
       </div>
     </footer>
   );
