@@ -2,7 +2,7 @@
   "name": "vpnscore",
   "private": true,
   "scripts": {
-    "dev": "next next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
