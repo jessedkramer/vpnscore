@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AFFILIATE } from "../../lib/affiliates";
 
 export const metadata = {
   title: "VPN voor Netflix Nederland 2026 | VPNScore",
@@ -8,13 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="wrap">
-      <nav className="nav">
-        <Link href="/">← Home</Link>
-        <Link href="/reviews/nordvpn">NordVPN</Link>
-        <Link href="/reviews/surfshark">Surfshark</Link>
-      </nav>
-      <p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
+    <>
+<p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
         Affiliate disclosure: VPNScore kan commissie ontvangen via links op deze pagina.
       </p>
       <h1>VPN voor Netflix Nederland 2026 — Welke werkt?</h1>
@@ -30,8 +26,8 @@ export default function Page() {
         <p><strong>Privacy eerst:</strong> Proton VPN (7.5/10)</p>
       </div>
       <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-        <a className="btn" href="#AFFILIATE_NORD">Bekijk NordVPN (beste voor Netflix) →</a>
-        <a className="btn" href="#AFFILIATE_SURFSHARK">Bekijk Surfshark →</a>
+        <a className="btn" href={AFFILIATE.nord}>Bekijk NordVPN (beste voor Netflix) →</a>
+        <a className="btn" href={AFFILIATE.surfshark}>Bekijk Surfshark →</a>
       </div>
 
       <h2>Waarom een VPN voor Netflix?</h2>
@@ -48,7 +44,7 @@ export default function Page() {
         lijkt — wissel simpelweg van server.
       </p>
       <p><strong>Plus:</strong> snelheid + streaming-focus<br /><strong>Min:</strong> duurder bij veel apparaten</p>
-      <a className="btn" href="#AFFILIATE_NORD">NordVPN-deal →</a>
+      <a className="btn" href={AFFILIATE.nord}>NordVPN-deal →</a>
       <p><Link href="/reviews/nordvpn">Volledige review →</Link></p>
 
       <h2>Surfshark voor Netflix</h2>
@@ -56,7 +52,7 @@ export default function Page() {
         Werkt vaak goed, vooral op langetermijndeals. Unlimited devices = handig als TV + telefoon + laptop
         tegelijk streamen.
       </p>
-      <a className="btn" href="#AFFILIATE_SURFSHARK">Surfshark-deal →</a>
+      <a className="btn" href={AFFILIATE.surfshark}>Surfshark-deal →</a>
       <p><Link href="/reviews/surfshark">Volledige review →</Link></p>
 
       <h2>Tips als Netflix de VPN blokkeert</h2>
@@ -79,6 +75,6 @@ export default function Page() {
         Meestal slecht (traag, snel geblokkeerd, privacy-risico). Niet aan te raden.
       </p>
       <p className="disclosure">Laatst bijgewerkt: oktober 2026 · Placeholders: #AFFILIATE_NORD / #AFFILIATE_SURFSHARK</p>
-    </main>
+    </>
   );
 }

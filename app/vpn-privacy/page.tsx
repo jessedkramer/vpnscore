@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AFFILIATE } from "../../lib/affiliates";
 
 export const metadata = {
   title: "VPN voor privacy Nederland 2026 | VPNScore",
@@ -8,13 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="wrap">
-      <nav className="nav">
-        <Link href="/">← Home</Link>
-        <Link href="/reviews/nordvpn">NordVPN</Link>
-        <Link href="/reviews/surfshark">Surfshark</Link>
-      </nav>
-      <p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
+    <>
+<p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
         Affiliate disclosure: VPNScore kan commissie ontvangen via links op deze pagina.
       </p>
       <h1>VPN voor privacy in Nederland 2026</h1>
@@ -30,9 +26,9 @@ export default function Page() {
         <p><strong>Privacy + veel devices / prijs:</strong> Surfshark</p>
       </div>
       <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-        <a className="btn" href="#AFFILIATE_NORD">NordVPN →</a>
-        <a className="btn" href="#AFFILIATE_SURFSHARK">Surfshark →</a>
-        <a className="btn" href="#AFFILIATE_PROTON">Proton VPN →</a>
+        <a className="btn" href={AFFILIATE.nord}>NordVPN →</a>
+        <a className="btn" href={AFFILIATE.surfshark}>Surfshark →</a>
+        <a className="btn" href={AFFILIATE.proton}>Proton VPN →</a>
       </div>
 
       <h2>Wat een VPN wél en níet doet</h2>
@@ -66,12 +62,12 @@ export default function Page() {
 
       <h2>NordVPN — privacy + gebruiksgemak</h2>
       <p>Audits, sterke encryptie, Threat Protection. Minder “purist” dan Proton, wel compleet voor dagelijks gebruik.</p>
-      <a className="btn" href="#AFFILIATE_NORD">NordVPN →</a>
+      <a className="btn" href={AFFILIATE.nord}>NordVPN →</a>
       <p><Link href="/reviews/nordvpn">Review →</Link></p>
 
       <h2>Surfshark — privacy voor het huishouden</h2>
       <p>Camouflage Mode / NoBorders, scherpe prijs, unlimited devices. Goede middenweg.</p>
-      <a className="btn" href="#AFFILIATE_SURFSHARK">Surfshark →</a>
+      <a className="btn" href={AFFILIATE.surfshark}>Surfshark →</a>
       <p><Link href="/reviews/surfshark">Review →</Link></p>
 
       <h2>FAQ</h2>
@@ -88,6 +84,6 @@ export default function Page() {
       <p className="disclosure">
         Laatst bijgewerkt: oktober 2026. Juridisch voorzichtig — geen advies tot illegaal gebruik.
       </p>
-    </main>
+    </>
   );
 }
