@@ -8,7 +8,7 @@ const vpns = [
     score: "9.2",
     tag: "Beste overall",
     price: "€3,39",
-    priceNote: "/mnd · 2 jaar",
+    period: "2 jr",
     devices: "Tot 10",
     streaming: "Uitstekend",
     privacy: "Sterk",
@@ -26,7 +26,7 @@ const vpns = [
     score: "8.9",
     tag: "Beste prijs",
     price: "€1,99",
-    priceNote: "/mnd · 2 jaar",
+    period: "2 jr",
     devices: "Unlimited",
     streaming: "Zeer goed",
     privacy: "Goed",
@@ -44,7 +44,7 @@ const vpns = [
     score: "8.5",
     tag: "Beste privacy",
     price: "€2,99",
-    priceNote: "/mnd · 2 jaar",
+    period: "2 jr",
     devices: "Tot 10",
     streaming: "Wisselend",
     privacy: "Top",
@@ -64,12 +64,12 @@ const faqItems = [
     a: "Allround en streaming: NordVPN. Budget of veel devices: Surfshark. Privacy eerst: Proton VPN.",
   },
   {
-    q: "Wat is de goedkoopste VPN?",
-    a: "Op langetermijndeals meestal Surfshark. Zie onze goedkoopste-VPN-pagina voor de prijsvergelijking.",
+    q: "Wat is de beste VPN voor Netflix?",
+    a: "Voor betrouwbaarheid: NordVPN. Voor prijs: Surfshark. Meer details in onze Netflix-gids.",
   },
   {
-    q: "Wat is de beste VPN voor Netflix?",
-    a: "Voor betrouwbaarheid: NordVPN. Voor prijs: Surfshark. Meer in onze Netflix- en streaming-gidsen.",
+    q: "Is een VPN legaal in Nederland?",
+    a: "Ja. Illegaal gebruik blijft illegaal — de VPN zelf niet.",
   },
 ] as const;
 
@@ -128,12 +128,11 @@ export default function HomePage() {
           <strong>Winnaar: {winner.name}</strong>
           <span className="muted">
             {" "}
-            — {winner.tag.toLowerCase()} · vanaf {winner.price}
-            {winner.priceNote}
+            — {winner.tag.toLowerCase()} · vanaf {winner.price}/mnd
           </span>
         </p>
         <p className="muted hero-lead">
-          Scores en prijzen naast elkaar — daarna door naar de aanbieding.
+          NordVPN, Surfshark of Proton VPN — scores en prijzen naast elkaar, daarna kiezen.
         </p>
         <div className="actions">
           <a className="btn" href="#vergelijking">
@@ -152,7 +151,7 @@ export default function HomePage() {
             <tr>
               <th>VPN</th>
               <th>Score</th>
-              <th>Prijs</th>
+              <th className="th-price">Prijs</th>
               <th>Beste voor</th>
               <th>Apparaten</th>
               <th>Streaming</th>
@@ -166,14 +165,21 @@ export default function HomePage() {
                   <strong>
                     {v.rank}. {v.name}
                   </strong>
-                  {v.winner ? <span className="winner-pill">Winnaar</span> : null}
+                  {v.winner ? (
+                    <span className="winner-pill">{v.tag}</span>
+                  ) : null}
                 </td>
                 <td className={v.rank === 1 ? "best" : undefined} data-label="Score">
                   {v.score}
                 </td>
                 <td className="price" data-label="Prijs">
-                  <span className="price-main">{v.price}</span>
-                  <span className="price-note">{v.priceNote}</span>
+                  <span className="price-prefix">Vanaf</span>
+                  <span className="price-main">
+                    {v.price}
+                    <span className="price-unit">/mnd</span>
+                  </span>
+                  <span className="period-chip">{v.period}</span>
+                  <span className="price-renew">daarna hoger</span>
                 </td>
                 <td data-label="Beste voor">{v.tag.replace("Beste ", "")}</td>
                 <td
@@ -188,10 +194,14 @@ export default function HomePage() {
                 >
                   {v.streaming}
                 </td>
-                <td>
-                  <a className="btn btn-sm" href={v.deal}>
+                <td className="cta-cell">
+                  <a
+                    className={v.winner ? "btn btn-sm" : "btn-quiet btn-sm"}
+                    href={v.deal}
+                  >
                     Bekijk aanbieding
                   </a>
+                  <span className="cta-trust">30 dagen geld-terug</span>
                 </td>
               </tr>
             ))}
@@ -199,16 +209,7 @@ export default function HomePage() {
         </table>
       </div>
       <p className="small muted table-note">
-        Prijzen: langetermijndeals (2 jaar), kunnen wijzigen. Check altijd de actuele aanbieding.
-      </p>
-      <p className="small">
-        Meer: <Link href="/vpn-streaming">Streaming</Link>
-        {" · "}
-        <Link href="/goedkoopste-vpn">Goedkoopste VPN</Link>
-        {" · "}
-        <Link href="/nordvpn-vs-surfshark">NordVPN vs Surfshark</Link>
-        {" · "}
-        <Link href="/vpn-netflix">Netflix</Link>
+        Introductieprijzen bij 2-jaarsdeal; na afloop hoger. Check altijd de actuele aanbieding.
       </p>
 
       <h2 id="top3">Top 3</h2>
@@ -222,8 +223,8 @@ export default function HomePage() {
               </h3>
               <p style={{ margin: "0.35rem 0 0" }}>{v.blurb}</p>
               <p className="price-inline">
-                Vanaf <strong>{v.price}</strong>
-                {v.priceNote}
+                Vanaf <strong>{v.price}</strong>/mnd
+                <span className="period-chip">{v.period}</span>
               </p>
             </div>
             <span className="score">{v.score}/10</span>
@@ -239,13 +240,14 @@ export default function HomePage() {
             </div>
           </div>
           <div className="actions">
-            <a className="btn" href={v.deal}>
+            <a className={v.winner ? "btn" : "btn-quiet"} href={v.deal}>
               {v.cta}
             </a>
             <Link className="btn-ghost" href={v.href}>
               Review
             </Link>
           </div>
+          <p className="cta-trust card-trust">30 dagen geld-terug</p>
         </article>
       ))}
 
