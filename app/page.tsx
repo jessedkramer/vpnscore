@@ -169,6 +169,11 @@ export default function HomePage() {
             Bekijk {winner.name}-aanbieding
           </a>
         </div>
+        <p className="small muted" style={{ margin: 0 }}>
+          <Link href="/hoe-we-testen">Hoe we scoren</Link>
+          {" · "}
+          <Link href="/over-ons">Wat is VPNScore?</Link>
+        </p>
       </section>
 
       <h2 id="vergelijking">Vergelijking</h2>
