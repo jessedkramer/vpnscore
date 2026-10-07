@@ -64,12 +64,12 @@ const faqItems = [
     a: "Allround en streaming: NordVPN. Budget of veel devices: Surfshark. Privacy eerst: Proton VPN.",
   },
   {
-    q: "Wat is de beste VPN voor Netflix?",
-    a: "Voor betrouwbaarheid: NordVPN. Voor prijs: Surfshark. Meer details in onze Netflix-gids.",
+    q: "Wat is de goedkoopste VPN?",
+    a: "Op langetermijndeals meestal Surfshark. Zie onze goedkoopste-VPN-pagina voor de prijsvergelijking.",
   },
   {
-    q: "Is een VPN legaal in Nederland?",
-    a: "Ja. Illegaal gebruik blijft illegaal — de VPN zelf niet.",
+    q: "Wat is de beste VPN voor Netflix?",
+    a: "Voor betrouwbaarheid: NordVPN. Voor prijs: Surfshark. Meer in onze Netflix- en streaming-gidsen.",
   },
 ] as const;
 
@@ -133,7 +133,7 @@ export default function HomePage() {
           </span>
         </p>
         <p className="muted hero-lead">
-          NordVPN, Surfshark of Proton VPN — scores en prijzen naast elkaar, daarna kiezen.
+          Scores en prijzen naast elkaar — daarna door naar de aanbieding.
         </p>
         <div className="actions">
           <a className="btn" href="#vergelijking">
@@ -200,6 +200,15 @@ export default function HomePage() {
       </div>
       <p className="small muted table-note">
         Prijzen: langetermijndeals (2 jaar), kunnen wijzigen. Check altijd de actuele aanbieding.
+      </p>
+      <p className="small">
+        Meer: <Link href="/vpn-streaming">Streaming</Link>
+        {" · "}
+        <Link href="/goedkoopste-vpn">Goedkoopste VPN</Link>
+        {" · "}
+        <Link href="/nordvpn-vs-surfshark">NordVPN vs Surfshark</Link>
+        {" · "}
+        <Link href="/vpn-netflix">Netflix</Link>
       </p>
 
       <h2 id="top3">Top 3</h2>
