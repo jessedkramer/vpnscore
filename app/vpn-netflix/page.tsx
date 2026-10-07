@@ -4,77 +4,77 @@ import { AFFILIATE } from "../../lib/affiliates";
 export const metadata = {
   title: "VPN voor Netflix Nederland 2026 | VPNScore",
   description:
-    "Welke VPN werkt voor Netflix in Nederland? Vergelijk NordVPN en Surfshark voor streaming.",
+    "Welke VPN werkt voor Netflix in Nederland? NordVPN vs Surfshark — ranking en aanbiedingen.",
 };
 
 export default function Page() {
   return (
     <>
-<p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
-        Affiliate disclosure: VPNScore kan commissie ontvangen via links op deze pagina.
-      </p>
-      <h1>VPN voor Netflix Nederland 2026 — Welke werkt?</h1>
-      <p>
-        Netflix blokkeert VPN's regelmatig. Geen enkele VPN is 100% van de tijd onzichtbaar — wél zijn er
-        merken die het vaakst werken voor streaming vanuit NL.
+      <h1>VPN voor Netflix Nederland 2026</h1>
+      <p className="muted">
+        Netflix blokkeert VPN's regelmatig. Hieronder wie het vaakst werkt — daarna door naar de
+        aanbieding.
       </p>
 
-      <h2>Kort advies</h2>
-      <div className="card">
-        <p><strong>Meest betrouwbaar:</strong> NordVPN (streaming 9.0/10)</p>
-        <p><strong>Goedkoop + veel devices:</strong> Surfshark (8.5/10)</p>
-        <p><strong>Privacy eerst:</strong> Proton VPN (7.5/10)</p>
-      </div>
-      <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-        <a className="btn" href={AFFILIATE.nord}>Bekijk NordVPN (beste voor Netflix) →</a>
-        <a className="btn" href={AFFILIATE.surfshark}>Bekijk Surfshark →</a>
+      <div className="card card-winner">
+        <h2 style={{ marginTop: 0 }}>Kort advies</h2>
+        <p>
+          <strong>Meest betrouwbaar:</strong> NordVPN
+          <br />
+          <strong>Goedkoop + veel devices:</strong> Surfshark
+        </p>
+        <div className="actions">
+          <a className="btn" href={AFFILIATE.nord}>
+            Bekijk aanbieding NordVPN
+          </a>
+          <a className="btn-ghost" href={AFFILIATE.surfshark}>
+            Bekijk aanbieding Surfshark
+          </a>
+        </div>
       </div>
 
       <h2>Waarom een VPN voor Netflix?</h2>
       <ul>
-        <li>Andere landencatalogus (bijv. VS) bekijken</li>
-        <li>Minder tracking op openbare wifi</li>
-        <li>Stabielere verbinding in sommige netwerken</li>
+        <li>Andere landencatalogus bekijken</li>
+        <li>Veiliger streamen op openbare wifi</li>
       </ul>
-      <p>Let op: Netflix' gebruiksvoorwaarden kunnen regio-restricties hebben. Gebruik op eigen verantwoordelijkheid.</p>
 
-      <h2>NordVPN voor Netflix</h2>
+      <h2>NordVPN</h2>
       <p>
-        Nord heeft dedicated streaming-servers. In de praktijk: vaak de snelste fix als een server geblokkeerd
-        lijkt — wissel simpelweg van server.
+        Sterk op streaming-servers. Lijkt een server geblokkeerd? Wissel van land/server.
       </p>
-      <p><strong>Plus:</strong> snelheid + streaming-focus<br /><strong>Min:</strong> duurder bij veel apparaten</p>
-      <a className="btn" href={AFFILIATE.nord}>NordVPN-deal →</a>
-      <p><Link href="/reviews/nordvpn">Volledige review →</Link></p>
-
-      <h2>Surfshark voor Netflix</h2>
+      <a className="btn" href={AFFILIATE.nord}>
+        Bekijk aanbieding NordVPN
+      </a>
       <p>
-        Werkt vaak goed, vooral op langetermijndeals. Unlimited devices = handig als TV + telefoon + laptop
-        tegelijk streamen.
+        <Link href="/reviews/nordvpn">Review</Link>
       </p>
-      <a className="btn" href={AFFILIATE.surfshark}>Surfshark-deal →</a>
-      <p><Link href="/reviews/surfshark">Volledige review →</Link></p>
 
-      <h2>Tips als Netflix de VPN blokkeert</h2>
+      <h2>Surfshark</h2>
+      <p>
+        Vaak goedkoper; unlimited devices handig voor TV + telefoon + laptop tegelijk.
+      </p>
+      <a className="btn" href={AFFILIATE.surfshark}>
+        Bekijk aanbieding Surfshark
+      </a>
+      <p>
+        <Link href="/reviews/surfshark">Review</Link>
+      </p>
+
+      <h2>Tips bij blokkade</h2>
       <ol>
-        <li>Andere server / land proberen</li>
-        <li>VPN even uit-aan (nieuwe IP)</li>
-        <li>Browser-cache legen of privévenster</li>
-        <li>App vs browser testen</li>
+        <li>Andere server / land</li>
+        <li>VPN even uit-aan</li>
+        <li>Cache legen of privévenster</li>
       </ol>
 
-      <h2>FAQ</h2>
       <p>
-        <strong>Welke VPN is het best voor Netflix NL?</strong>
-        <br />
-        Voor betrouwbaarheid: NordVPN. Voor budget/gezin: Surfshark.
+        <Link href="/vpn-streaming">VPN voor streaming</Link>
+        {" · "}
+        <Link href="/nordvpn-vs-surfshark">NordVPN vs Surfshark</Link>
+        {" · "}
+        <Link href="/">Ranking</Link>
       </p>
-      <p>
-        <strong>Werkt een gratis VPN voor Netflix?</strong>
-        <br />
-        Meestal slecht (traag, snel geblokkeerd, privacy-risico). Niet aan te raden.
-      </p>
-      <p className="disclosure">Laatst bijgewerkt: oktober 2026 · Placeholders: #AFFILIATE_NORD / #AFFILIATE_SURFSHARK</p>
     </>
   );
 }
