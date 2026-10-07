@@ -26,10 +26,11 @@ export default function Page() {
           <a className="btn" href={AFFILIATE.surfshark}>
             Bekijk aanbieding Surfshark
           </a>
-          <a className="btn-ghost" href={AFFILIATE.nord}>
+          <a className="btn-quiet" href={AFFILIATE.nord}>
             Bekijk aanbieding NordVPN
           </a>
         </div>
+        <p className="cta-trust card-trust">30 dagen geld-terug</p>
       </div>
 
       <h2>Prijsvergelijking</h2>
@@ -38,7 +39,7 @@ export default function Page() {
           <thead>
             <tr>
               <th>VPN</th>
-              <th>Vanaf</th>
+              <th className="th-price">Vanaf</th>
               <th>Apparaten</th>
               <th>Beste voor</th>
               <th></th>
@@ -47,20 +48,27 @@ export default function Page() {
           <tbody>
             <tr className="winner">
               <td>
-                <strong>Surfshark</strong> <span className="winner-pill">Beste prijs</span>
+                <strong>Surfshark</strong>{" "}
+                <span className="winner-pill">Beste prijs</span>
               </td>
               <td className="price best" data-label="Vanaf">
-                <span className="price-main">€1,99</span>
-                <span className="price-note">/mnd · 2 jaar</span>
+                <span className="price-prefix">Vanaf</span>
+                <span className="price-main">
+                  €1,99
+                  <span className="price-unit">/mnd</span>
+                </span>
+                <span className="period-chip">2 jr</span>
+                <span className="price-renew">daarna hoger</span>
               </td>
               <td className="best" data-label="Apparaten">
                 Unlimited
               </td>
               <td data-label="Beste voor">Budget / gezin</td>
-              <td>
+              <td className="cta-cell">
                 <a className="btn btn-sm" href={AFFILIATE.surfshark}>
                   Bekijk aanbieding
                 </a>
+                <span className="cta-trust">30 dagen geld-terug</span>
               </td>
             </tr>
             <tr>
@@ -68,15 +76,21 @@ export default function Page() {
                 <strong>Proton VPN</strong>
               </td>
               <td className="price" data-label="Vanaf">
-                <span className="price-main">€2,99</span>
-                <span className="price-note">/mnd · 2 jaar</span>
+                <span className="price-prefix">Vanaf</span>
+                <span className="price-main">
+                  €2,99
+                  <span className="price-unit">/mnd</span>
+                </span>
+                <span className="period-chip">2 jr</span>
+                <span className="price-renew">daarna hoger</span>
               </td>
               <td data-label="Apparaten">Tot 10</td>
               <td data-label="Beste voor">Privacy</td>
-              <td>
-                <a className="btn btn-sm" href={AFFILIATE.proton}>
+              <td className="cta-cell">
+                <a className="btn-quiet btn-sm" href={AFFILIATE.proton}>
                   Bekijk aanbieding
                 </a>
+                <span className="cta-trust">30 dagen geld-terug</span>
               </td>
             </tr>
             <tr>
@@ -84,22 +98,28 @@ export default function Page() {
                 <strong>NordVPN</strong>
               </td>
               <td className="price" data-label="Vanaf">
-                <span className="price-main">€3,39</span>
-                <span className="price-note">/mnd · 2 jaar</span>
+                <span className="price-prefix">Vanaf</span>
+                <span className="price-main">
+                  €3,39
+                  <span className="price-unit">/mnd</span>
+                </span>
+                <span className="period-chip">2 jr</span>
+                <span className="price-renew">daarna hoger</span>
               </td>
               <td data-label="Apparaten">Tot 10</td>
               <td data-label="Beste voor">Overall</td>
-              <td>
-                <a className="btn btn-sm" href={AFFILIATE.nord}>
+              <td className="cta-cell">
+                <a className="btn-quiet btn-sm" href={AFFILIATE.nord}>
                   Bekijk aanbieding
                 </a>
+                <span className="cta-trust">30 dagen geld-terug</span>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
       <p className="small muted table-note">
-        Na de introperiode stijgt de prijs vaak. Check verlenging vóór je tekent.
+        Introductieprijzen bij 2-jaarsdeal; na afloop hoger. Check verlenging vóór je tekent.
       </p>
 
       <h2>FAQ</h2>
