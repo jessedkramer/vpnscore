@@ -16,7 +16,7 @@ export default function Page() {
         prijs en unlimited devices.
       </p>
 
-      <div className="card">
+      <div className="card card-winner">
         <p style={{ marginTop: 0 }}>
           <strong>Kies NordVPN</strong> als je allround wilt (snelheid + streaming).
           <br />
@@ -26,10 +26,11 @@ export default function Page() {
           <a className="btn" href={AFFILIATE.nord}>
             Bekijk aanbieding NordVPN
           </a>
-          <a className="btn" href={AFFILIATE.surfshark}>
+          <a className="btn-quiet" href={AFFILIATE.surfshark}>
             Bekijk aanbieding Surfshark
           </a>
         </div>
+        <p className="cta-trust card-trust">30 dagen geld-terug</p>
       </div>
 
       <h2>Side-by-side</h2>
@@ -113,10 +114,11 @@ export default function Page() {
         <a className="btn" href={AFFILIATE.nord}>
           Bekijk aanbieding NordVPN
         </a>
-        <a className="btn-ghost" href={AFFILIATE.surfshark}>
+        <a className="btn-quiet" href={AFFILIATE.surfshark}>
           Bekijk aanbieding Surfshark
         </a>
       </div>
+      <p className="cta-trust card-trust">30 dagen geld-terug</p>
 
       <p style={{ marginTop: "1.5rem" }}>
         <Link href="/goedkoopste-vpn">Goedkoopste VPN</Link>
