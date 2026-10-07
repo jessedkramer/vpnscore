@@ -1,88 +1,68 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { AFFILIATE } from "../../lib/affiliates";
 
-export const metadata = {
-  title: "VPN voor privacy Nederland 2026 | VPNScore",
+export const metadata: Metadata = {
+  title: "VPN voor privacy Nederland 2026",
   description:
-    "VPN voor privacy in Nederland: wat het wel en niet doet, legaal gebruik, en welke VPN scoort op no-logs.",
+    "VPN voor privacy in NL: wat het wel/niet doet, en wie scoort op no-logs — Proton, NordVPN, Surfshark.",
+  alternates: { canonical: "/vpn-privacy" },
 };
 
 export default function Page() {
   return (
     <>
-<p className="disclosure" style={{ borderTop: "none", marginTop: 0, paddingTop: 0 }}>
-        Affiliate disclosure: VPNScore kan commissie ontvangen via links op deze pagina.
-      </p>
       <h1>VPN voor privacy in Nederland 2026</h1>
-      <p>
-        Een VPN versleutelt je verbinding en verbergt je IP voor websites en je netwerkbeheerder. Handig op
-        openbare wifi, tegen tracking, en voor minder zichtbaarheid online.
+      <p className="muted">
+        Encryptie + ander IP — handig op openbare wifi en tegen tracking. Hieronder wie past.
       </p>
 
-      <h2>Kort advies</h2>
-      <div className="card">
-        <p><strong>Allround privacy + features:</strong> NordVPN</p>
-        <p><strong>Privacy + open source / Proton:</strong> Proton VPN</p>
-        <p><strong>Privacy + veel devices / prijs:</strong> Surfshark</p>
-      </div>
-      <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-        <a className="btn" href={AFFILIATE.nord}>NordVPN →</a>
-        <a className="btn" href={AFFILIATE.surfshark}>Surfshark →</a>
-        <a className="btn" href={AFFILIATE.proton}>Proton VPN →</a>
+      <div className="card card-winner">
+        <h2 style={{ marginTop: 0 }}>Kort advies</h2>
+        <p>
+          <strong>Privacy-first:</strong> Proton VPN
+          <br />
+          <strong>Allround:</strong> NordVPN
+          <br />
+          <strong>Privacy + budget/devices:</strong> Surfshark
+        </p>
+        <div className="actions">
+          <a className="btn" href={AFFILIATE.proton}>
+            Bekijk aanbieding Proton
+          </a>
+          <a className="btn-quiet" href={AFFILIATE.nord}>
+            Bekijk aanbieding NordVPN
+          </a>
+        </div>
+        <p className="cta-trust card-trust">30 dagen geld-terug</p>
       </div>
 
       <h2>Wat een VPN wél en níet doet</h2>
       <p>
-        <strong>Wél:</strong> encryptie op openbare wifi, minder IP-tracking, toegang via andere servers.
+        <strong>Wél:</strong> encryptie op openbare wifi, minder IP-tracking.
         <br />
-        <strong>Niet:</strong> anonieme criminaliteit, 100% onzichtbaarheid, of bescherming als je inlogt op
-        Google/Facebook (die zien wie je bent).
+        <strong>Niet:</strong> 100% onzichtbaarheid als je inlogt bij Google/Facebook.
       </p>
 
-      <h2>Is een VPN legaal in Nederland?</h2>
-      <p>
-        Ja. Een VPN gebruiken is legaal. Illegale activiteiten blijven illegaal — met of zonder VPN. Wij
-        moedigen geen illegale downloads of fraude aan.
-      </p>
+      <h2>Legaal in Nederland?</h2>
+      <p>Ja. Illegaal gebruik blijft illegaal — de VPN zelf niet.</p>
 
-      <h2>Waar letten we op bij privacy?</h2>
+      <h2>Waar letten we op?</h2>
       <ol>
-        <li>No-logs beleid + onafhankelijke audits</li>
-        <li>Jurisdictie (waar het bedrijf gevestigd is)</li>
+        <li>No-logs + audits</li>
+        <li>Jurisdictie</li>
         <li>Encryptie & kill switch</li>
-        <li>Open source (transparantie) waar relevant</li>
+        <li>Open source waar relevant</li>
       </ol>
 
-      <h2>Proton VPN — privacy-first</h2>
       <p>
-        Zwitserse privacy-focus, open source apps, zelfde maker als Proton Mail. Sterke keuze als privacy je #1
-        is.
-      </p>
-      <p><strong>Plus:</strong> reputatie, transparantie<br /><strong>Min:</strong> streaming wisselt; gratis plan beperkt</p>
-
-      <h2>NordVPN — privacy + gebruiksgemak</h2>
-      <p>Audits, sterke encryptie, Threat Protection. Minder “purist” dan Proton, wel compleet voor dagelijks gebruik.</p>
-      <a className="btn" href={AFFILIATE.nord}>NordVPN →</a>
-      <p><Link href="/reviews/nordvpn">Review →</Link></p>
-
-      <h2>Surfshark — privacy voor het huishouden</h2>
-      <p>Camouflage Mode / NoBorders, scherpe prijs, unlimited devices. Goede middenweg.</p>
-      <a className="btn" href={AFFILIATE.surfshark}>Surfshark →</a>
-      <p><Link href="/reviews/surfshark">Review →</Link></p>
-
-      <h2>FAQ</h2>
-      <p>
-        <strong>Heb ik een VPN nodig in NL?</strong>
-        <br />
-        Niet verplicht. Wel nuttig op openbare wifi, reizen, en als je minder tracking wilt.
-      </p>
-      <p>
-        <strong>Vervangt een VPN een wachtwoordmanager?</strong>
-        <br />
-        Nee. Gebruik beide: VPN voor de verbinding, een manager voor accounts.
-      </p>
-      <p className="disclosure">
-        Laatst bijgewerkt: oktober 2026. Juridisch voorzichtig — geen advies tot illegaal gebruik.
+        <Link href="/reviews/proton-vpn">Proton VPN review</Link>
+        {" · "}
+        <Link href="/reviews/nordvpn">NordVPN review</Link>
+        {" · "}
+        <Link href="/over-ons">Over VPNScore</Link>
+        {" · "}
+        <Link href="/">Ranking</Link>
       </p>
     </>
   );
