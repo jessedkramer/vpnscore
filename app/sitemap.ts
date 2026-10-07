@@ -10,6 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/reviews/proton-vpn",
     "/vpn-netflix",
     "/vpn-privacy",
+    "/vpn-streaming",
+    "/goedkoopste-vpn",
+    "/nordvpn-vs-surfshark",
   ];
   return paths.map((path) => ({
     url: `${base}${path === "/" ? "" : path}`,

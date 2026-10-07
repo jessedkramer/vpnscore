@@ -13,8 +13,10 @@ export function SiteFooter() {
         <div className="footer-links">
           <Link href="/reviews/nordvpn">NordVPN review</Link>
           <Link href="/reviews/surfshark">Surfshark review</Link>
-          <Link href="/vpn-netflix">VPN voor Netflix</Link>
-          <Link href="/vpn-privacy">Privacy</Link>
+          <Link href="/vpn-streaming">Streaming</Link>
+          <Link href="/goedkoopste-vpn">Goedkoopste VPN</Link>
+          <Link href="/nordvpn-vs-surfshark">Nord vs Surfshark</Link>
+          <Link href="/vpn-netflix">Netflix</Link>
         </div>
       </div>
       <div className="wrap disclosure">
