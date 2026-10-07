@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { AFFILIATE } from "../lib/affiliates";
+
+export const metadata: Metadata = {
+  title: "Beste VPN Nederland 2026 — Vergelijk & kies",
+  description:
+    "Beste VPN Nederland 2026: NordVPN, Surfshark en Proton VPN vergeleken op score, prijs en streaming. Direct naar de aanbieding.",
+  alternates: { canonical: "/" },
+};
 
 const vpns = [
   {
@@ -60,16 +68,20 @@ const vpns = [
 
 const faqItems = [
   {
+    q: "Wat is VPNScore?",
+    a: "VPNScore vergelijkt VPN's voor Nederland: scores, prijzen en duidelijke keuzes — zodat je snel door kunt naar de aanbieding die bij je past.",
+  },
+  {
     q: "Welke VPN past bij mij?",
     a: "Allround en streaming: NordVPN. Budget of veel devices: Surfshark. Privacy eerst: Proton VPN.",
   },
   {
-    q: "Wat is de beste VPN voor Netflix?",
-    a: "Voor betrouwbaarheid: NordVPN. Voor prijs: Surfshark. Meer details in onze Netflix-gids.",
+    q: "Wat is de goedkoopste VPN?",
+    a: "Op langetermijndeals meestal Surfshark. Zie onze goedkoopste-VPN-pagina.",
   },
   {
-    q: "Is een VPN legaal in Nederland?",
-    a: "Ja. Illegaal gebruik blijft illegaal — de VPN zelf niet.",
+    q: "Wat is de beste VPN voor Netflix?",
+    a: "Voor betrouwbaarheid: NordVPN. Voor prijs: Surfshark. Meer in onze Netflix- en streaming-gidsen.",
   },
 ] as const;
 
@@ -88,6 +100,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Beste VPN Nederland 2026",
+    numberOfItems: vpns.length,
     itemListElement: vpns.map((v) => ({
       "@type": "ListItem",
       position: v.rank,
@@ -98,11 +111,21 @@ export default function HomePage() {
 
   const orgSchema = {
     "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "VPNScore",
+    url: "https://vpnscore.nl",
+    description:
+      "Nederlandse VPN-vergelijking met ranking, scores en directe links naar aanbiedingen.",
+  };
+
+  const siteSchema = {
+    "@context": "https://schema.org",
     "@type": "WebSite",
     name: "VPNScore",
     url: "https://vpnscore.nl",
-    description: "Vergelijk de beste VPN's voor Nederland en kies direct.",
     inLanguage: "nl-NL",
+    description: "Beste VPN Nederland 2026 — vergelijken en kiezen.",
+    publisher: { "@type": "Organization", name: "VPNScore" },
   };
 
   const winner = vpns[0];
@@ -112,6 +135,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
       />
       <script
         type="application/ld+json"
@@ -132,7 +159,7 @@ export default function HomePage() {
           </span>
         </p>
         <p className="muted hero-lead">
-          NordVPN, Surfshark of Proton VPN — scores en prijzen naast elkaar, daarna kiezen.
+          Scores en prijzen naast elkaar — daarna door naar de aanbieding.
         </p>
         <div className="actions">
           <a className="btn" href="#vergelijking">
@@ -211,6 +238,17 @@ export default function HomePage() {
       <p className="small muted table-note">
         Introductieprijzen bij 2-jaarsdeal; na afloop hoger. Check altijd de actuele aanbieding.
       </p>
+      <p className="small">
+        Meer: <Link href="/vpn-streaming">Streaming</Link>
+        {" · "}
+        <Link href="/goedkoopste-vpn">Goedkoopste VPN</Link>
+        {" · "}
+        <Link href="/nordvpn-vs-surfshark">NordVPN vs Surfshark</Link>
+        {" · "}
+        <Link href="/vpn-netflix">Netflix</Link>
+        {" · "}
+        <Link href="/vpn-privacy">Privacy</Link>
+      </p>
 
       <h2 id="top3">Top 3</h2>
       {vpns.map((v) => (
@@ -250,6 +288,17 @@ export default function HomePage() {
           <p className="cta-trust card-trust">30 dagen geld-terug</p>
         </article>
       ))}
+
+      <h2 id="wat-is-vpnscore">Wat is VPNScore?</h2>
+      <div className="card">
+        <p style={{ marginTop: 0 }}>
+          VPNScore is een Nederlandse VPN-vergelijking: we zetten scores en prijzen naast elkaar zodat
+          je snel kiest — allround, budget of privacy — en door kunt naar de aanbieding.
+        </p>
+        <p className="small muted" style={{ marginBottom: 0 }}>
+          Geen badge-festival. Wel een duidelijke ranking en eerlijke plus/min per VPN.
+        </p>
+      </div>
 
       <h2>FAQ</h2>
       <div className="faq">

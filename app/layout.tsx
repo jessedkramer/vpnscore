@@ -11,18 +11,34 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vpnscore.nl"),
   title: {
-    default: "VPNScore — Beste VPN Nederland 2026",
+    default: "Beste VPN Nederland 2026 — Vergelijk & kies | VPNScore",
     template: "%s | VPNScore",
   },
   description:
-    "Vergelijk de beste VPN's voor Nederland. Ranking, scores en directe links naar NordVPN, Surfshark en Proton VPN.",
-  metadataBase: new URL("https://vpnscore.nl"),
+    "Vergelijk NordVPN, Surfshark en Proton VPN voor Nederland. Scores, prijzen en directe links naar de aanbieding.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "VPNScore — Beste VPN Nederland 2026",
-    description: "Vergelijk NordVPN, Surfshark en Proton VPN — scores naast elkaar, daarna kiezen.",
+    title: "Beste VPN Nederland 2026 | VPNScore",
+    description:
+      "Ranking met scores en prijzen — kies NordVPN, Surfshark of Proton VPN.",
+    url: "https://vpnscore.nl",
+    siteName: "VPNScore",
     locale: "nl_NL",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Beste VPN Nederland 2026 | VPNScore",
+    description:
+      "Vergelijk VPN's voor NL — scores, prijzen, daarna kiezen.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
